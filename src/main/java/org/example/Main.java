@@ -1,17 +1,34 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.print("Hello and welcome!");
+import org.junit.jupiter.api.Test;
+import pages.LoginPage;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class Main {
+    @Test
+    public void loginTest() {
+        LoginPage lp = new LoginPage();
+        lp.open();
+        String fullName = lp.writeLogin("technopol67").writePassword("technopolisPassword").getFullName();
+        assertEquals(fullName, "technopol67 technopol67");
+    }
+
+    @Test
+    public void noFriendsTest() {
+        LoginPage lp = new LoginPage();
+        lp.open();
+        String noFriendsText = lp.writeLogin("technopol67").writePassword("technopolisPassword")
+                .clickFriendsBtn().getNoFriends();
+        assertEquals(noFriendsText, "Пока нет друзей");
+    }
+
+    @Test
+    public void albumsTest() {
+        LoginPage lp = new LoginPage();
+        lp.open();
+        String noFriendsText = lp.writeLogin("technopol67").writePassword("technopolisPassword")
+                .clickPhotoBtn().getAlbums();
+        assertEquals(noFriendsText, "Альбомы");
     }
 }
