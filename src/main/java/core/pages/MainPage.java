@@ -33,8 +33,11 @@ public class MainPage extends BasePage{
         return new FriendsPage();
     }
 
-    public PhotosPage clickPhotoBtn() {
+    public AlbumsPage clickPhotoBtn() {
+        $x(NAV_PHOTOS_BTN.getLocator())
+                .shouldBe(visible.because("Photos button should be visible on Main Page"));
+
         $x(NAV_PHOTOS_BTN.getLocator()).click();
-        return new PhotosPage();
+        return new AlbumsPage();
     }
 }

@@ -26,4 +26,12 @@ public class FriendsPage extends BasePage {
 
         return $x(FP_FRIENDS_TEXT.getLocator()).getText();
     }
+
+    public MainPage openMainPage(){
+        $x(NAV_USER_MAIN.getLocator())
+                .shouldBe(visible.because("Main menu button should be visible"));
+
+        $x(NAV_USER_MAIN.getLocator()).click();
+        return new MainPage();
+    }
 }

@@ -15,6 +15,16 @@ public enum Locators {
     //Albums Page
     AP_ALBUMS_TEXT("//div/h3[@class='portlet_h_name_t']"),
     AP_PHOTOS_AREA("//div[@data-tsid='photo_stream_block']"),
+    AP_GRID_ELEMENTS("//div[@class='grid__1ewbi']"),
+    AP_GRID_ITEM("//div[@class='grid-item__1ewbi']"),
+    //Photo Page
+    PP_COMMENTS_BLOCK("//div[@id='hook_Block_InlineCommentPLB']"),
+    PP_IMAGE_BLOCK("//div[@class='image-container__ugpyu']"),
+    PP_SET_DESCRIPTION_BTN("//div[@class='text-field_cnt']"),
+    PP_SAFE_DESCRIPTION_BTN("//button[@data-l='t,textField-save']"),
+    PP_DESCRIPTION_TEXTAREA("//textarea[@name='desc']"),
+    PP_DESCRIPTION_TEXT("//div[@class='text-field_text']"),
+    PP_CLOSE_BTN("//button[@class='panel_close__ugpyu close__ugpyu']"),
 
     //Navigation Bar
     NAVIGATION_MENU("//nav[@role='navigation']"),

@@ -11,6 +11,7 @@ repositories {
 
 dependencies {
     implementation("org.junit.jupiter:junit-jupiter-engine:5.0.0")
+    implementation("org.junit.jupiter:junit-jupiter-params:5.0.0")
     implementation("com.codeborne:selenide:7.2.2")
 }
 

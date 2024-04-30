@@ -1,8 +1,9 @@
 package tests;
 
-import core.pages.PhotosPage;
+import core.pages.AlbumsPage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.$x;
@@ -11,21 +12,24 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AlbumsTest extends BaseTest {
 
-    PhotosPage photosPage;
+    AlbumsPage albumsPage;
     @BeforeEach
     public void prepareTest(){
         mainPage.clickPhotoBtn();
-        photosPage = new PhotosPage();
+        albumsPage = new AlbumsPage();
     }
 
+
     @Test
+    @Tag("albums")
+    @Tag("text display")
     public void albumsTest() {
-        String albumsText = photosPage.getAlbumsText();
+        String albumsText = albumsPage.getAlbumsText();
         assertEquals("Альбомы", albumsText);
     }
 
     @AfterEach
     public void cleanAfterTest() {
-        $x(NAV_USER_MAIN.getLocator()).click();
+        albumsPage.openMainPage();
     }
 }

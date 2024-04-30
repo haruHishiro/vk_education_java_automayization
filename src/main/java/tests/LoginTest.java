@@ -4,6 +4,7 @@ import core.pages.LoginPage;
 import core.pages.MainPage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -17,6 +18,8 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
+    @Tag("login")
+    @Tag("text display")
     public void loginTest(){
         String fullName = mainPage.getFullName();
         assertEquals(FULL_NAME.getValue(), fullName);
