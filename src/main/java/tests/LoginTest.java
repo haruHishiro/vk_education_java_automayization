@@ -11,7 +11,6 @@ import static tests.enums.BotValues.FULL_NAME;
 
 public class LoginTest extends BaseTest {
 
-
     @BeforeEach
     public void prepareTest() {
 

@@ -11,18 +11,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class HaveFriendsTest extends BaseTest {
 
-
     FriendsPage friendsPage;
     @BeforeEach
     public void prepareTest() {
         mainPage.clickFriendsBtn();
         friendsPage = new FriendsPage();
     }
-
     @Test
     public void friendsTest(){
         String friendsText = friendsPage.getFriendsText();
-        assertEquals("Мои друзья", friendsText);
+        assertEquals("РњРѕРё РґСЂСѓР·СЊСЏ", friendsText);
     }
 
     @AfterEach

@@ -11,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AlbumsTest extends BaseTest {
 
-
     PhotosPage photosPage;
     @BeforeEach
     public void prepareTest(){
@@ -22,7 +21,7 @@ public class AlbumsTest extends BaseTest {
     @Test
     public void albumsTest() {
         String albumsText = photosPage.getAlbumsText();
-        assertEquals("Альбомы", albumsText);
+        assertEquals("РђР»СЊР±РѕРјС‹", albumsText);
     }
 
     @AfterEach
